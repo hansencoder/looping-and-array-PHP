@@ -71,7 +71,7 @@ $listings = [
 <body class="bg-neutral-900">
     <header class="bg-lime-300 text-black p-4">
         <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold">Quezon City Job Listing site</h1>
+            <h1 class="text-3xl font-semibold">Quezon City Job Listing</h1>
         </div>
     </header>
         <div class="container mx-auto mt-4">
