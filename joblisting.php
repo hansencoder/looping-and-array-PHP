@@ -38,10 +38,21 @@ $listings = [
     ],
 ];
 
+function filterByLocation($listings, $location)
+{
+    return array_filter($listings, function ($listing) use ($location) {
+        return strcasecmp($listing['location'], $location) === 0;
+        return $listing['location'] === $location;
+    });
+}
+
+if (isset($_GET['location'])) {
+    $filteredListings = filterByLocation($listings, $_GET['location']);
+} else {
+    $filteredListings = $listings;
+}
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,17 +79,17 @@ $listings = [
     <title>Job Listings</title>
 </head>
 
-<body class="bg-neutral-900">
-    <header class="bg-lime-300 text-black p-4">
+<body class="bg-blue-600">
+    <header class="bg-white text-black p-4">
         <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold">Quezon City Job Listing</h1>
+            <h1 class="text-3xl font-semibold">Job Listing</h1>
         </div>
     </header>
         <div class="container mx-auto mt-4">
         <!-- output -->
-        <?php foreach ($listings as $index => $job) : ?>
+        <?php foreach ($filteredListings as $index => $job) : ?>
             <div class="md my-4">
-                <div class="<?= ($index % 2 === 0) ? 'bg-stone-700 text-white' : 'bg-lime-400 text-black' ?> rounded-lg shadow-md">
+                <div class="<?= ($index % 2 === 0) ? 'bg-blue-500 text-white' : 'bg-black text-white' ?> rounded-lg shadow-md">
                     <div class="p-4">
                         <h2 class="text-2xl font-bold mb-2"><?= $job['title'] ?></h2>
                         <p class=" mb-2"><?= $job['description'] ?></p>

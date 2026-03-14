@@ -113,6 +113,7 @@
                     <p class="text-lg"><span class="font-bold text-amber-900">Spouse:</span> <span class="text-gray-700"><?php echo $spouse; ?></span></p>
                     <p class="text-lg"><span class="font-bold text-amber-900">Children:</span> <span class="text-gray-700"><?php echo $children; ?></span></p>
                 </div>
+                </div>
             </div>
         </div>
     </div>

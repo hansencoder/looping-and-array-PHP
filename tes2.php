@@ -72,11 +72,6 @@ $output10 = date('a'); // am or pm
       <p class="text-xl"><?= $output10 ?></p>
 
 
-
-
-
-
-
       <header class="bg-blue-500 text-white p-4">
         <div class="container mx-auto">
           <h1 class="text-3xl font-semibold">PHP</h1>
